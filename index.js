@@ -61,7 +61,7 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':     
-          if(message.text.includes("nama") || message.text.includes("email")){
+          if(message.text.includes("nama") || message.text.includes("email") || message.text.includes("Email") || message.text.includes("Email")){
             const splitter = message.text.split(" ")
             return handleRegistration(splitter, event.replyToken, event.source);
           }
