@@ -61,9 +61,9 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
-          // if(message.text.includes("nama") || message.text.includes("email")){
-          //   console.log("Process later");
-          // }
+          if(message.text.includes("nama") || message.text.includes("email")){
+            return replyText(event.replyToken, `Menu Belum Tersedia`);
+          }
           return handleText(message, event.replyToken, event.source);
         case 'image':
           return handleImage(message, event.replyToken);
