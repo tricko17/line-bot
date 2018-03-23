@@ -60,7 +60,7 @@ function handleEvent(event) {
     case 'message':
       const message = event.message;
       switch (message.type) {
-        case 'text':
+        case 'text':     
           if(message.text.includes("nama") || message.text.includes("email")){
             const splitter = message.text.split(" ")
             return handleRegistration(splitter, event.replyToken, event.source);
@@ -89,12 +89,17 @@ function handleRegistration(message, replyToken, source){
   console.log(message[0])
   switch(message[0]){
     case 'nama':
-      replyText(
+      return client.replyText(
         replyToken,
         `Hai, ${message[1]}. Sekarang masukkan email kamu yaa, cth: email john.doe@dexagroup.com`
       )
+    case 'email':
+      return client.replyText(
+        replyToken,
+        `Data kamu sudah lengkap nih, jangan lupa ketik help untuk meminta bantuan`
+      )
     default: 
-      replyText(
+      return client.replyText(
         replyToken,
         `Kamu sudah pernah terdaftar`
       )
