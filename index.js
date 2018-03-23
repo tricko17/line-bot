@@ -96,7 +96,8 @@ function handleRegistration(message, replyToken, source){
     case 'email':
       return replyText(
         replyToken,
-        `Data kamu sudah lengkap nih, jangan lupa ketik help untuk meminta bantuan`
+        `Data kamu sudah lengkap nih, Sekarang kamu sudah bisa submit issue / membuat request baru lewat official line kami. \
+        ketik help untuk memulai`
       )
     default: 
       return replyText(
