@@ -113,6 +113,7 @@ function handleText(message, replyToken, source) {
           .then((profile) => replyText(
             replyToken,
             [
+              `User Id: ${source.userId}`,
               `Display name: ${profile.displayName}`,
               `Status message: ${profile.statusMessage}`,
             ]
