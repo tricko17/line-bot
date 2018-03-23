@@ -61,6 +61,9 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
+          if(message.text.includes("nama") || message.text.includes("email")){
+            console.log("Process later");
+          }
           return handleText(message, event.replyToken, event.source);
         case 'image':
           return handleImage(message, event.replyToken);
@@ -125,19 +128,25 @@ function handleText(message, replyToken, source) {
       replyToken,
       {
         type: 'template',
-        altText: 'Buttons alt text',
+        altText: 'Help Template',
         template: {
           type: 'buttons',
-          title: 'My button sample',
-          text: 'Hello, my button',
+          text: 'Silahkan Pilih Menu',
           actions: [
-            { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-            { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-            { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-            { label: 'Say message', type: 'message', text: 'Rice=米' },
+            { label: 'registrasi', type: 'message', text: 'registrasi' },
+            { label: 'request', type: 'message', text: 'request' },
           ],
         },
-      }  
+      }
+    case 'registrasi':
+    replyText(
+      replyToken,
+      [
+        'Silahkan isi nama kamu dengan format berikut, cth: ',
+        'nama John Doe',
+        'email john.doe@dexagroup.com',  
+      ]
+    )
     case 'buttons':
       return client.replyMessage(
         replyToken,
