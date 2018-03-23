@@ -121,6 +121,23 @@ function handleText(message, replyToken, source) {
       } else {
         return replyText(replyToken, 'Bot can\'t use profile API without user ID');
       }
+    case 'help':
+      replyToken,
+      {
+        type: 'template',
+        altText: 'Buttons alt text',
+        template: {
+          type: 'buttons',
+          title: 'My button sample',
+          text: 'Hello, my button',
+          actions: [
+            { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
+            { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
+            { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
+            { label: 'Say message', type: 'message', text: 'Rice=米' },
+          ],
+        },
+      }  
     case 'buttons':
       return client.replyMessage(
         replyToken,
