@@ -89,7 +89,7 @@ function handleRegistration(message, replyToken, source){
   
   const command = message[0]
   const action = command.toLowerCase();
-  console.log(message[0])
+  console.log(message[0] + ' -> ' + message[1])
   switch(action){
     case 'nama':
       return replyText(
