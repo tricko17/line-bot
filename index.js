@@ -61,9 +61,9 @@ function handleEvent(event) {
       const message = event.message;
       switch (message.type) {
         case 'text':
-          if(message.text.includes("nama") || message.text.includes("email")){
-            console.log("Process later");
-          }
+          // if(message.text.includes("nama") || message.text.includes("email")){
+          //   console.log("Process later");
+          // }
           return handleText(message, event.replyToken, event.source);
         case 'image':
           return handleImage(message, event.replyToken);
@@ -125,28 +125,30 @@ function handleText(message, replyToken, source) {
         return replyText(replyToken, 'Bot can\'t use profile API without user ID');
       }
     case 'help':
-      replyToken,
-      {
-        type: 'template',
-        altText: 'Help Template',
-        template: {
-          type: 'buttons',
-          text: 'Silahkan Pilih Menu',
-          actions: [
-            { label: 'registrasi', type: 'message', text: 'registrasi' },
-            { label: 'request', type: 'message', text: 'request' },
-          ],
-        },
-      }
+      return replyText(
+        replyToken,
+        {
+          type: 'template',
+          altText: 'Help Template',
+          template: {
+            type: 'buttons',
+            text: 'Silahkan Pilih Menu',
+            actions: [
+              { label: 'registrasi', type: 'message', text: 'registrasi' },
+              { label: 'request', type: 'message', text: 'request' },
+            ],
+          },
+        }
+      )
     case 'registrasi':
-    replyText(
-      replyToken,
-      [
-        'Silahkan isi nama kamu dengan format berikut, cth: ',
-        'nama John Doe',
-        'email john.doe@dexagroup.com',  
-      ]
-    )
+      return replyText(
+        replyToken,
+        [
+          'Silahkan isi nama kamu dengan format berikut, cth: ',
+          'nama John Doe',
+          'email john.doe@dexagroup.com',  
+        ]
+      )
     case 'buttons':
       return client.replyMessage(
         replyToken,
