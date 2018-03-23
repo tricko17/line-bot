@@ -86,9 +86,11 @@ function handleEvent(event) {
 }
 
 function handleRegistration(message, replyToken, source){
-  console.log(message[0].toLowerCase())
-  const command = message[0].toLowerCase()
-  switch(command){
+  
+  const command = message[0]
+  const action = command.toLowerCase();
+  console.log(action)
+  switch(action){
     case 'nama':
       return replyText(
         replyToken,
