@@ -86,6 +86,7 @@ function handleEvent(event) {
 }
 
 function handleRegistration(message, replyToken, source){
+  console.log(message[0])
   switch(message[0]){
     case 'nama':
       replyText(
