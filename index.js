@@ -89,17 +89,17 @@ function handleRegistration(message, replyToken, source){
   console.log(message[0])
   switch(message[0]){
     case 'nama':
-      return client.replyText(
+      return replyText(
         replyToken,
         `Hai, ${message[1]}. Sekarang masukkan email kamu yaa, cth: email john.doe@dexagroup.com`
       )
     case 'email':
-      return client.replyText(
+      return replyText(
         replyToken,
         `Data kamu sudah lengkap nih, jangan lupa ketik help untuk meminta bantuan`
       )
     default: 
-      return client.replyText(
+      return replyText(
         replyToken,
         `Kamu sudah pernah terdaftar`
       )
