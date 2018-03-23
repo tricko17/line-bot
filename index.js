@@ -26,8 +26,8 @@ const app = express();
 app.use('/static', express.static('static'));
 app.use('/downloaded', express.static('downloaded'));
 
-app.get('',(req, res) => {
-  console.log("hello")
+app.get('', (req, res) => {
+  res.send('hello world')
 });
 // webhook callback
 app.post('/callback', line.middleware(config), (req, res) => {
