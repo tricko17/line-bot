@@ -87,7 +87,7 @@ function handleEvent(event) {
 
 function handleRegistration(message, replyToken, source){
   console.log(message[0])
-  switch(message[0]){
+  switch(message[0].toLowerCase()){
     case 'nama':
       return replyText(
         replyToken,
@@ -110,7 +110,7 @@ function handleRegistration(message, replyToken, source){
 function handleText(message, replyToken, source) {
   const buttonsImageURL = `${baseURL}/static/buttons/1040.jpg`;
 
-  switch (message.text) {
+  switch (message.text.toLowerCase()) {
     case 'profile':
       if (source.userId) {
         return client.getProfile(source.userId)
