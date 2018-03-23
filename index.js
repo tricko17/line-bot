@@ -63,7 +63,7 @@ function handleEvent(event) {
         case 'text':
           if(message.text.includes("nama") || message.text.includes("email")){
             const splitter = message.text.split(" ")
-            return replyText(event.replyToken, splitter[1]);
+            return handleRegistration(splitter, event.replyToken, event.source);
           }
           return handleText(message, event.replyToken, event.source);
         case 'image':
@@ -82,6 +82,21 @@ function handleEvent(event) {
 
     default:
       throw new Error(`Unknown event: ${JSON.stringify(event)}`);
+  }
+}
+
+function handleRegistration(message, replyToken, source){
+  switch(message[0]){
+    case 'nama':
+      replyText(
+        replyToken,
+        `Hai, ${message[1]}. Sekarang masukkan email kamu yaa, cth: email john.doe@dexagroup.com`
+      )
+    default: 
+      replyText(
+        replyToken,
+        `Kamu sudah pernah terdaftar`
+      )
   }
 }
 
@@ -124,8 +139,7 @@ function handleText(message, replyToken, source) {
         replyToken,
         [
           'Silahkan isi nama kamu dengan format berikut, cth: ',
-          'nama John Doe',
-          'email john.doe@dexagroup.com',  
+          'nama John Doe'
         ]
       )
     case 'buttons':
