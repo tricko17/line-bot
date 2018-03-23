@@ -125,7 +125,7 @@ function handleText(message, replyToken, source) {
         return replyText(replyToken, 'Bot can\'t use profile API without user ID');
       }
     case 'help':
-      return replyText(
+      return client.replyMessage(
         replyToken,
         {
           type: 'template',
