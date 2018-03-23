@@ -171,7 +171,7 @@ function handleText(message, replyToken, source) {
       );
     default:
       console.log(`Echo message to ${replyToken}: ${message.text}`);
-      return replyText(replyToken, "Gak ngerti ahh... :'(");
+      return replyText(replyToken, "Maaf, aku gak paham. Aku tanya ke developernya dulu yaah");
   }
 }
 
