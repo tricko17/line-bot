@@ -151,22 +151,23 @@ function handleText(message, replyToken, source) {
           'nama John Doe'
         ]
       )
-    case 'buttons':
+    case 'request':
       return client.replyMessage(
         replyToken,
         {
           type: 'template',
-          altText: 'Buttons alt text',
+          altText: 'Request Form Template',
           template: {
             type: 'buttons',
-            // thumbnailImageUrl: buttonsImageURL,
-            title: 'My button sample',
-            text: 'Hello, my button',
+            title: 'Request Form Template',
             actions: [
-              { label: 'Go to line.me', type: 'uri', uri: 'https://line.me' },
-              { label: 'Say hello1', type: 'postback', data: 'hello こんにちは' },
-              { label: '言 hello2', type: 'postback', data: 'hello こんにちは', text: 'hello こんにちは' },
-              { label: 'Say message', type: 'message', text: 'Rice=米' },
+              { label: 'Organization', type: 'message', text: 'cth: organization IU-ITD' },
+              { label: 'Caller', type: 'message', text: 'cth: caller Rio Oktafianto' },
+              { label: 'Status', type: 'message', text: 'cth: status New' },
+              { label: 'Title', type: 'message', text: 'cth: title Akses Printer' },
+              { label: 'Description', type: 'message', text: 'cth: description Akses printer baru' },
+              { label: 'Impact', type: 'message', text: 'cth: cth: department' },
+              { label: 'Urgency', type: 'message', text: 'cth: urgency low' }
             ],
           },
         }
