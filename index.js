@@ -156,7 +156,7 @@ function handleText(message, replyToken, source) {
         replyToken,
         {
           type: 'template',
-          altText: 'Request Form Template',
+          altText: 'Request Template',
           template: {
             type: 'buttons',
             title: 'Request Form Template',
