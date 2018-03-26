@@ -99,8 +99,7 @@ function handleRegistration(message, replyToken, source){
     case 'email':
       return replyText(
         replyToken,
-        `Data kamu sudah lengkap nih, Sekarang kamu sudah bisa submit issue / membuat request baru lewat official line kami. \
-        ketik help untuk memulai`
+        `Data kamu sudah lengkap nih, Sekarang kamu sudah bisa submit issue / membuat request baru lewat official line kami. Ketik help untuk memulai`
       )
     default: 
       return replyText(
@@ -160,7 +159,7 @@ function handleText(message, replyToken, source) {
           altText: 'Buttons alt text',
           template: {
             type: 'buttons',
-            thumbnailImageUrl: buttonsImageURL,
+            // thumbnailImageUrl: buttonsImageURL,
             title: 'My button sample',
             text: 'Hello, my button',
             actions: [
