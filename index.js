@@ -159,7 +159,7 @@ function handleText(message, replyToken, source) {
           altText: 'Request Template',
           template: {
             type: 'buttons',
-            title: 'Request Form Template',
+            text: 'Request Form Template',
             actions: [
               { label: 'Organization', type: 'message', text: 'cth: organization IU-ITD' },
               { label: 'Caller', type: 'message', text: 'cth: caller Rio Oktafianto' },
@@ -167,7 +167,7 @@ function handleText(message, replyToken, source) {
               { label: 'Title', type: 'message', text: 'cth: title Akses Printer' },
               { label: 'Description', type: 'message', text: 'cth: description Akses printer baru' },
               { label: 'Impact', type: 'message', text: 'cth: cth: department' },
-              { label: 'Urgency', type: 'message', text: 'cth: urgency low' }
+              { label: 'Urgency', type: 'message', text: 'cth: urgency low' },
             ],
           },
         }
