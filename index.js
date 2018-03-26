@@ -159,7 +159,7 @@ function handleText(message, replyToken, source) {
     //       'organization John Doe'
     //     ]
     //   )
-    case 'request':
+    case 'norequest':
       return client.replyMessage(
         replyToken,
         {
@@ -172,10 +172,10 @@ function handleText(message, replyToken, source) {
               { label: 'Organization', type: 'message', text: 'cth: organization IU-ITD' },
               { label: 'Caller', type: 'message', text: 'cth: caller Rio Oktafianto' },
               { label: 'Status', type: 'message', text: 'cth: status New' },
-              { label: 'Title', type: 'message', text: 'cth: title Akses Printer' },
-              { label: 'Description', type: 'message', text: 'cth: description Akses printer baru' },
-              { label: 'Impact', type: 'message', text: 'cth: cth: department' },
-              { label: 'Urgency', type: 'message', text: 'cth: urgency low' },
+              // { label: 'Title', type: 'message', text: 'cth: title Akses Printer' },
+              // { label: 'Description', type: 'message', text: 'cth: description Akses printer baru' },
+              // { label: 'Impact', type: 'message', text: 'cth: cth: department' },
+              // { label: 'Urgency', type: 'message', text: 'cth: urgency low' },
             ],
           },
         }
