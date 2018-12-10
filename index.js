@@ -5,15 +5,10 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cp = require('child_process');
-
-// create LINE SDK config from env variables
-const config = {
-  channelAccessToken: 'R/FZUCPlezKfQkQUdqSEXxArbt5ld3NYDTX/UE7T776KA+Hef0LK+ufGaW5cWyzUd/AbN6Pk60YSbpfmbLDusnVvFyMo1SopNfcChogG7XijAlGa83Y8V2xOz2ps0u/UixWq9zHQ6tZLdZZofluMbwdB04t89/1O/w1cDnyilFU=',
-  channelSecret: '19bfd45b908f6e92b99cdd6452537ed6',
-};
+const config = require('./config');
 
 // base URL for webhook server
-const baseURL = "linenode.herokuapp.com";
+const baseURL = "your-webhook-url";
 
 // create LINE SDK client
 const client = new line.Client(config);
